@@ -1,0 +1,38 @@
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<h1> create a cat </h1>
+<%= render "shared/form", cat: @cat %>
+
+
+
+
+
+<!-- <form action="<%= cats_url %>" method="post">
+  <label>Cat Name
+    <input type="text" name= "cat[name]" value = "enter cat name">
+  </label>
+  <label>Cat Color
+    <select name=cat[color]>
+      <option value="purple">Purple</option>
+      <option value="aquamarine">Aquamarine</option>
+      <option value="ochre">ochre</option>
+      <option value="polka-dot">polka-dot</option>
+      <option value="black">black</option>
+    </select>
+  </label>
+  <label>Cat Sex
+    <label><input type="radio" value = "M" name="cat[sex]">Male</label>
+
+    <label><input type="radio" value = "F" name="cat[sex]">Female</label>
+  </label>
+  <label>Description
+    <textarea name="cat[description]"></textarea>
+  </label>
+  <label>Birthdate
+    <input type="date" name="cat[birth_date]">
+  </label>
+
+  <input type="submit" value="Create Cat" />
+</form> -->

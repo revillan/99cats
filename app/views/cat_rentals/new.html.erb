@@ -1,0 +1,29 @@
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<h1>Request a cat</h1>
+
+<% all_cats = Cat.all %>
+
+<form action="<%= cat_rentals_url %>" method="POST">
+  <label> Select a cat
+    <select name=cat_rental[cat_id]>
+      <% all_cats.each do |cat| %>
+        <option value='<%= cat.id%>'> <%= cat.name %> </option>
+      <% end %>
+    </select>
+  </label>
+
+  <label> Start date
+    <input type="date" name="cat_rental[start_date]" />
+  </label>
+
+  <label> End date
+    <input type="date" name="cat_rental[end_date]" />
+  </label>
+
+  <input type="hidden" name="cat_rental[status]" value="PENDING"/>
+
+  <input type="submit" value="Request Rental" />
+</form>
